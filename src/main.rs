@@ -1,25 +1,10 @@
 fn main() {
-    println!("Hello, world!");
-    let mut x = 4;
-    // type will be implicit :type will be determine by compiler
-    // the immutable
-    x = x +5;
+   let x: i32 = 2;
+   // i32 is default i8  i16 i65 i128
+   let a: u32 = 2;
+   // u32 
+   let true_:bool = true;
+   let letter: char = 'a';
 
-    // you can create or override variable
-    let a =5;
-    println!("x is : {}",a);
-    let a = 45;
-    println!("x is : {}",a);
-    println!("x is : {}",x);
-
-    // you can scope or shadow
-
-    {
-        x = 6;
-        println!("x is : {}",x);
-    }
-
-
-    const THE_VALUE : u32 = 60;
-    println!("x is : {}",THE_VALUE);
+   
 }
