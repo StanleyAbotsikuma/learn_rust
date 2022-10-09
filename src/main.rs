@@ -1,10 +1,22 @@
+use rand::Rng;
+use std::io;
 fn main() {
-   let x: i32 = 2;
-   // i32 is default i8  i16 i65 i128
-   let a: u32 = 2;
-   // u32 
-   let true_:bool = true;
-   let letter: char = 'a';
+    while "start"== "start" {
+        println!("");
+        println!("");
+        println!("Enter a number from 1 - 10");
+        println!("###########################");
+        let mut input = String::new();
 
-   
+        io::stdin()
+            .read_line(&mut input)
+            .expect("failed to read line");
+        
+        let num = rand::thread_rng().gen_range(0..10);
+        if input.trim().parse::<u32>().unwrap() == num {
+            println!("Great well done the predicted number was {}", num);
+        } else {
+            println!("Sorry try again the predicted number was {}", num);
+        }
+    }
 }
