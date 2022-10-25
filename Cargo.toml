@@ -2,10 +2,17 @@
 name = "tutorial3"
 version = "0.1.0"
 edition = "2021"
-postgres = "0.19.4"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 rand = "0.8"
 json = "0.12.4"
-diesel = { version = "2.0.0", features = ["postgres"] }
+# mysql = "*"
+# pq-sys = "0.4.4"
+# libsqlite3-sys = "0.25.1"
+# libpq-sys = "0.7.0"
+# mysqlclient-sys = "0.2.5"
+# diesel = { version = "2.0.0", features = ["postgres"] }
+
+postgres = "0.19.4"
+dotenvy = "0.15"
