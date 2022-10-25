@@ -2,7 +2,7 @@
 name = "tutorial3"
 version = "0.1.0"
 edition = "2021"
-
+postgres = "0.19.4"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
