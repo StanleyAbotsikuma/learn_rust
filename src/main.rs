@@ -8,13 +8,29 @@ fn main() -> Result<(), Error> {
         "postgres://postgres:root@localhost:5432/postgres",
         NoTls,
     )?;
-
+    println!("");
+    
+    println!("");
     println!("++++++++++++++++++++++++++++++++++");
     println!("Welcome to Rust Database CLI CRUD");
     println!("++++++++++++++++++++++++++++++++++");
     println!("");
-    while true{
-        
+    while "true"=="true"{
+        println!("1. Insert Data");
+        println!("2. Edit Data");
+        println!("3. Delete Data");
+        println!("4. Display Data");
+        println!("5. Query Data");
+        let mut menuItem =String::new() ;
+       match io::stdin().read_line(&mut menuItem){
+            Ok()=>{
+println!("test");
+            },
+            
+            _=>println!("Rest of the number"),
+            
+          }
+       break;
     }
 //     client.batch_execute("
 //     CREATE TABLE personname (
@@ -31,7 +47,7 @@ client.execute(
     &[&name, &data],
 )?;
 
-execution(&client,name,data);
+
 
 for row in client.query("SELECT id, name, data FROM person", &[])? {
     let id: i32 = row.get(0);
