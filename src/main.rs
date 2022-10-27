@@ -21,12 +21,20 @@ fn main() -> Result<(), Error> {
         println!("3. Delete Data");
         println!("4. Display Data");
         println!("5. Query Data");
+        println!("6. Exit");
         let mut menuItem =String::new() ;
-       match io::stdin().read_line(&mut menuItem){
-            Ok()=>{
+        io::stdin().read_line(&mut menuItem).expect("failed to readline");
+ 
+
+       match menuItem.trim().parse::<i32>().unwrap(){
+            1=>{
 println!("test");
             },
             
+            6=>{
+                println!("test");
+                            },
+                            
             _=>println!("Rest of the number"),
             
           }
