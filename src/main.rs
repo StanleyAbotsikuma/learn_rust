@@ -11,6 +11,7 @@ fn main() -> Result<(), Error> {
     println!("Welcome to Rust Database CLI CRUD");
     println!("++++++++++++++++++++++++++++++++++");
     println!("");
+    println!("");
     while "true" == "true" {
         println!("1. Insert Data");
         println!("2. Edit Data");
@@ -41,26 +42,31 @@ fn main() -> Result<(), Error> {
                     &[&username, &data],
                 )?;
                 println!("");
-                println!("{} - Inserted succesful", username);
+                println!("Request succesful");
             }
             2 => {
                 println!("");
                 println!("***********");
                 println!("Edit Data");
                 println!("***********");
+                println!("");
                 for row in client.query("SELECT id, name, data FROM person", &[])? {
                     let id: i32 = row.get(0);
                     let name: &str = row.get(1);
-                    let data: Option<&[u8]> = row.get(2);
+                    // let data: Option<&[u8]> = row.get(2);
 
-                    println!(" {} {} {:?}", id, name, data);
+                    println!("{} | {} ", id, name);
                 }
                 println!("");
                 println!("Enter person Id:");
+
                 let mut index = String::new();
                 io::stdin()
                     .read_line(&mut index)
                     .expect("failed to readline");
+                    println!("");
+
+                    println!("Enter new person:");
                 let mut newusername = String::new();
                 io::stdin()
                     .read_line(&mut newusername)
@@ -101,9 +107,9 @@ fn main() -> Result<(), Error> {
                 for row in client.query("SELECT id, name, data FROM person", &[])? {
                     let id: i32 = row.get(0);
                     let name: &str = row.get(1);
-                    let data: Option<&[u8]> = row.get(2);
+                    // let data: Option<&[u8]> = row.get(2);
 
-                    println!("{} {} {:?}", id, name, data);
+                    println!("{} | {} ", id, name);
                 }
             }
             5 => {
@@ -111,6 +117,7 @@ fn main() -> Result<(), Error> {
                 println!("***********");
                 println!("Query a row");
                 println!("***********");
+                println!("");
                 println!("Enter an id:");
                 let mut index = String::new();
                 io::stdin()
@@ -120,9 +127,9 @@ fn main() -> Result<(), Error> {
                 for row in client.query("SELECT  name, data FROM person  WHERE id =$1", &[&index])?
                 {
                     let name: &str = row.get(0);
-                    let data: Option<&[u8]> = row.get(1);
+                    // let data: Option<&[u8]> = row.get(1);
 
-                    println!("Selected row has {} {:?} ",name, data);
+                    println!("Selected row has {}  ",name);
                 }
             }
             6 => {
